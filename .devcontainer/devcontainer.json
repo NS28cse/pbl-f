@@ -1,0 +1,34 @@
+{
+    "name": "MikTeX LuaLaTeX Template",
+    "build": { "dockerfile": "Dockerfile" },
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop"
+            ],
+            "settings": {
+                // ビルド成果物の場所を .latexmkrc と合わせる
+                "latex-workshop.latex.outDir": "out",
+                
+                // 保存時に自動ビルド
+                "latex-workshop.latex.autoBuild.run": "onFileChange",
+                
+                // レシピ: latexmk コマンドを単純に実行
+                "latex-workshop.latex.recipes": [
+                    {
+                        "name": "latexmk",
+                        "tools": ["latexmk"]
+                    }
+                ],
+                "latex-workshop.latex.tools": [
+                    {
+                        "name": "latexmk",
+                        "command": "latexmk",
+                        "args": [ "%DOC%" ]
+                    }
+                ]
+            }
+        }
+    }
+}

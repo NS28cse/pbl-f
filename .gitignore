@@ -1,0 +1,14 @@
+# LaTeX build files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.out
+*.pdf
+
+# Output directory (defined in .latexmkrc)
+out/
+
+# VS Code
+.vscode/
