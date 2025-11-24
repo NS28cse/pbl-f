@@ -28,6 +28,9 @@ RUN usermod -l $USERNAME -d /home/$USERNAME -m miktex \
 # 3. ユーザー切り替えと初期設定
 USER $USERNAME
 
+# Update MikTeX package database to ensure AutoInstall works.
+RUN miktex packages update-package-database
+
 # MikTeXのパッケージ自動インストール設定
 RUN initexmf --set-config-value=[MPM]AutoInstall=1 \
     && initexmf --update-fndb
